@@ -1,0 +1,5 @@
+mkdir Download
+cd Download
+wget https://raw.githubusercontent.com/iuniti/zabbix/master/ZABBIX4
+chmod +x ZABBIX4
+./ZABBIX4 

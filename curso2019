@@ -1,0 +1,23 @@
+#!/bin/bash
+apt install screen figlet toilet cowsay -y > /dev/null
+rm /tmp/finish
+figlet -c Artistas da Monitoração
+wget -q https://raw.githubusercontent.com/arturbrasil/curriculo/gh-pages/zabbix4 -O /tmp/zabbix4
+chmod +x /tmp/zabbix4
+screen -d -m -S zabbix /tmp/zabbix4
+
+sp='/-\|'
+printf ' '
+while [ ! -f /tmp/finish ]; do
+    printf '\b%.1s' "$sp"
+    sp=${sp#?}${sp%???}
+done
+figlet -c ACAABOOUUUUUUUUUUU!!!
+iptables-save | grep 3306
+systemctl status mysql | grep Active
+systemctl status zabbix-server | grep Active
+systemctl status zabbix-agent | grep Active
+systemctl status grafana-server | grep Active
+cowsay AI PAI! PARA, TO IMPACTADA!
+
+

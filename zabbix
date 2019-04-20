@@ -7,7 +7,8 @@ figlet -c "Instalacao"
 figlet -c "Zabbix 4.0"
 figlet -c "Iuniti Services"
 echo "Iuniti services, script de instalação para o zabbix 4.0. By Marco totalmente automatizado."
-speel 7
+sleep 7
+
 echo deb http://us.archive.ubuntu.com/ubuntu/ bionic main universe >> /etc/apt/sources.list
 echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic main universe >> /etc/apt/sources.list
 echo deb http://us.archive.ubuntu.com/ubuntu/ bionic-security main universe >> /etc/apt/sources.list

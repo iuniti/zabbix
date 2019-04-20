@@ -47,6 +47,9 @@ cp index.html /var/www/html
 
 sed -i 's/# php_value date.timezone Europe\/Riga/php_value date.timezone America\/Sao_Paulo/g' /etc/apache2/conf-enabled/zabbix.conf
 
+echo "# Para efetuar leitura de chave e oid mantenha comentado a linha a baixo, caso contrario desconemnte" > /etc/snmp/snmp.conf
+echo "# mibs :" > /etc/snmp/snmp.conf
+
 systemctl restart apache2
 
 sudo apt-get install -y adduser libfontconfig

@@ -70,6 +70,7 @@ touch /tmp/finish
 
 systemctl enable zabbix-server.service
 systemctl enable zabbix-agent.service
+systemctl enable grafana-server.service
 
 iptables-save | grep 3306
 systemctl status mysql | grep Active

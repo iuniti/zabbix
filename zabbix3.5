@@ -1,14 +1,14 @@
 #!/bin/bash
-apt-get update
 apt install screen figlet toilet cowsay -y > /dev/null
 rm /tmp/finish
 figlet -c "Script"
 figlet -c "de"
 figlet -c "Instalacao"
-figlet -c "Zabbix 3.4"
+figlet -c "Zabbix 3.5"
 figlet -c "Iuniti Services"
-echo "Iuniti services, script de instalação para o zabbix 3.4. By Marco totalmente automatizado."
+echo "Iuniti services, script de instalação para o zabbix 3.5. By Marco totalmente automatizado."
 sleep 7
+apt-get update
 apt install -y apache2 php7.0
 apt-get install wget htop curl nano ssh -y
 apt-get install libcurl3 libiksemel3 libodbc1 libopenipmi0 libssh2-1 -y

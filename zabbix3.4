@@ -52,7 +52,12 @@ mysql -uroot -e "SHOW GRANTS FOR 'zabbix'@'localhost'";
 zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | mysql -uroot zabbix -p
 
 apt install -y apache2 php7.0
-> /var/www/html/index.html 
+
+wget https://raw.githubusercontent.com/iuniti/zabbix/master/index.html
+cp index.html /var/www/html
+
+echo "# Para efetuar leitura de chave e oid mantenha comentado a linha a baixo, caso contrario desconemnte" > /etc/snmp/snmp.conf
+echo "# mibs :" > /etc/snmp/snmp.conf
 
 sed -i 's/# php_value date.timezone Europe\/Riga/php_value date.timezone America\/Sao_Paulo/g' /etc/apache2/conf-enabled/zabbix.conf
 
@@ -65,12 +70,14 @@ sudo dpkg -i grafana_4.5.2_amd64.deb
 
 grafana-cli plugins install alexanderzobnin-zabbix-app
 grafana-cli plugins update alexanderzobnin-zabbix-app
-service grafana-server restart
+
 
 service zabbix-server restart
 service zabbix-agent restart
+service grafana-server restart
 systemctl enable zabbix-server.service
 systemctl enable zabbix-agent.service
+systemctl enable grafana-server.service
 
 cowsay -f tux Instalacao Finalizada
 figlet -c By Iuniti Services

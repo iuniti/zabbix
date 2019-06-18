@@ -1,0 +1,6 @@
+#!/bin/bash
+wget https://raw.githubusercontent.com/iuniti/zabbix/master/scriptolt.sh
+wget https://raw.githubusercontent.com/iuniti/zabbix/master/scriptpon.sh
+mv scriptpon.sh /usr/lib/zabbix/externalscripts/
+mv scriptolt.sh /usr/lib/zabbix/externalscripts/
+chmod a+x /usr/lib/zabbix/externalscripts/*.sh

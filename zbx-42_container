@@ -15,7 +15,6 @@ echo deb http://us.archive.ubuntu.com/ubuntu/ bionic-security main universe >> /
 echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-updates main universe>> /etc/apt/sources.list
 echo deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main universe >> /etc/apt/sources.list
 echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-security main universe >> /etc/apt/sources.list
-apt install htop dnsutils dnstop -y
 wget http://ftp.br.debian.org/debian/pool/main/libe/libevent/libevent-2.0-5_2.0.21-stable-3_amd64.deb
 dpkg -i libevent-2.0-5_2.0.21-stable-3_amd64.deb
 apt update
@@ -29,6 +28,7 @@ update-locale LANG=pt_BR.UTF-8
 apt install snmp snmpd -y 
 apt install snmp-mibs-downloader -y
 apt install nmap -y
+apt install htop dnsutils dnstop -y
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent zabbix-get zabbix-sender zabbix-java-gateway -y
 apt install apache2 -y
 apt install php php-cgi libapache2-mod-php php-common php-pear php-mbstring -y

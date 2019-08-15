@@ -26,13 +26,14 @@ apt update
 apt install locales -y
 locale-gen pt_BR.UTF-8
 update-locale LANG=pt_BR.UTF-8
+apt install snmp snmpd -y 
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent zabbix-get zabbix-sender zabbix-java-gateway -y
 apt install apache2 -y
 apt install php php-cgi libapache2-mod-php php-common php-pear php-mbstring -y
 apt install mariadb-server -y
 apt install zabbix-server-mysql zabbix-agent zabbix-frontend-php php-mysql php-gd php-xml-util php-bcmath php-net-socket php-gettext -y
 apt install nmap -y
-apt install snmp -y 
+
 apt install snmp-mibs-downloader -y
 
 echo "Configurando Banco de Dados"

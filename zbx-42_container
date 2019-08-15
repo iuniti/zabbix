@@ -33,7 +33,6 @@ apt install php php-cgi libapache2-mod-php php-common php-pear php-mbstring -y
 apt install mariadb-server -y
 apt install zabbix-server-mysql zabbix-agent zabbix-frontend-php php-mysql php-gd php-xml-util php-bcmath php-net-socket php-gettext -y
 apt install nmap -y
-
 apt install snmp-mibs-downloader -y
 
 echo "Configurando Banco de Dados"

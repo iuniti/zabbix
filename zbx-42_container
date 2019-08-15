@@ -16,7 +16,7 @@ echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-updates main universe>>
 echo deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main universe >> /etc/apt/sources.list
 echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-security main universe >> /etc/apt/sources.list
 apt install htop dnsutils dnstop -y
-http://ftp.br.debian.org/debian/pool/main/libe/libevent/libevent-2.0-5_2.0.21-stable-3_amd64.deb
+wget http://ftp.br.debian.org/debian/pool/main/libe/libevent/libevent-2.0-5_2.0.21-stable-3_amd64.deb
 dpkg -i libevent-2.0-5_2.0.21-stable-3_amd64.deb
 apt update
 apt install libevent-2.0-5
@@ -27,13 +27,13 @@ apt install locales -y
 locale-gen pt_BR.UTF-8
 update-locale LANG=pt_BR.UTF-8
 apt install snmp snmpd -y 
+apt install snmp-mibs-downloader -y
+apt install nmap -y
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent zabbix-get zabbix-sender zabbix-java-gateway -y
 apt install apache2 -y
 apt install php php-cgi libapache2-mod-php php-common php-pear php-mbstring -y
 apt install mariadb-server -y
 apt install zabbix-server-mysql zabbix-agent zabbix-frontend-php php-mysql php-gd php-xml-util php-bcmath php-net-socket php-gettext -y
-apt install nmap -y
-apt install snmp-mibs-downloader -y
 
 echo "Configurando Banco de Dados"
 sleep 7
@@ -49,7 +49,6 @@ mysql -uroot -e "SELECT host, user FROM mysql.user";
 mysql -uroot -e "SHOW GRANTS FOR 'zabbix'@'localhost'";
 
 zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uroot zabbix
-
 
 echo "Alterando Index"
 sleep 7
@@ -71,9 +70,6 @@ sleep 7
 
 wget https://dl.grafana.com/oss/release/grafana_6.2.5_amd64.deb
 dpkg -i grafana_6.2.5_amd64.deb
-
-
-
 
 grafana-cli plugins install alexanderzobnin-zabbix-app
 grafana-cli plugins update alexanderzobnin-zabbix-app

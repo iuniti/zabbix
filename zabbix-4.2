@@ -15,8 +15,8 @@ echo deb http://us.archive.ubuntu.com/ubuntu/ bionic-security main universe >> /
 echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-updates main universe>> /etc/apt/sources.list
 echo deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main universe >> /etc/apt/sources.list
 echo deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-security main universe >> /etc/apt/sources.list
-wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-1+xenial_all.deb
-dpkg -i zabbix-release_4.2-1+xenial_all.deb
+wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+xenial_all.deb
+dpkg -i zabbix-release_4.2-2+xenial_all.deb
 apt update
 apt install locales -y
 locale-gen pt_BR.UTF-8
@@ -64,9 +64,8 @@ sudo apt-get install -y adduser libfontconfig
 echo "Instalando Grafana"
 sleep 7
 
-wget https://dl.grafana.com/oss/release/grafana_6.2.5_amd64.deb
-dpkg -i grafana_6.2.5_amd64.deb
-
+wget https://dl.grafana.com/oss/release/grafana_6.3.5_amd64.deb
+dpkg -i grafana_6.3.5_amd64.deb
 
 
 

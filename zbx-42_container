@@ -19,8 +19,8 @@ wget http://ftp.br.debian.org/debian/pool/main/libe/libevent/libevent-2.0-5_2.0.
 dpkg -i libevent-2.0-5_2.0.21-stable-3_amd64.deb
 apt update
 apt install libevent-2.0-5
-wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-1+xenial_all.deb
-dpkg -i zabbix-release_4.2-1+xenial_all.deb
+wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+xenial_all.deb
+dpkg -i zabbix-release_4.2-2+xenial_all.deb
 apt update
 apt install locales -y
 locale-gen pt_BR.UTF-8
